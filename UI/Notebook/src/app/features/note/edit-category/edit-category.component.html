@@ -1,0 +1,139 @@
+<div class="container">
+  <h1 class="mt-3">Edit Notebook</h1>
+
+  <ng-container *ngIf="note; else notFound">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+      <div class="mt-2">
+        <div class="mt-3">
+          <label for="noteId">Note Id</label>
+          <input
+            type="text"
+            disabled
+            id="NoteId"
+            class="form-control"
+            name="noteId"
+            value="{{ note.id }}"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="firstName">Note FirstName</label>
+          <input
+            type="text"
+            id="NoteFirstName"
+            class="form-control"
+            name="noteFirstName"
+            [(ngModel)]="note.firstName"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="middleName">Note MiddleName</label>
+          <input
+            type="text"
+            id="NoteMiddleName"
+            class="form-control"
+            name="NoteMiddleName"
+            [(ngModel)]="note.middleName"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="lastName">Note LastName</label>
+          <input
+            type="text"
+            id="NoteFirstName"
+            class="form-control"
+            name="noteFirstName"
+            [(ngModel)]="note.lastName"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="phoneNumber">Note PhoneNumber</label>
+          <input
+            type="text"
+            id="NotePhoneNumber"
+            class="form-control"
+            name="NotePhoneNumber"
+            [(ngModel)]="note.phoneNumber"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="country">Note Country</label>
+          <input
+            type="text"
+            id="NoteCountry"
+            class="form-control"
+            name="noteCountry"
+            [(ngModel)]="note.country"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="birthDay">Note BirthDay</label>
+          <input
+            type="date"
+            id="NoteBirthDay"
+            class="form-control"
+            name="noteBirthDay"
+            value="{{ note.birthDay }}"
+            [ngModel]="note.birthDay | date : 'dd-MM-yyyy'"
+            (ngModelChange)="note.birthDay = $event"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="organization">Note Organization</label>
+          <input
+            type="text"
+            id="NoteOrganization"
+            class="form-control"
+            name="noteOrganization"
+            [(ngModel)]="note.organization"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="position">Note Position</label>
+          <input
+            type="text"
+            id="NotePosition"
+            class="form-control"
+            name="notePosition"
+            [(ngModel)]="note.position"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label for="other">Note Other</label>
+          <input
+            type="text"
+            id="NoteOther"
+            class="form-control"
+            name="noteOther"
+            [(ngModel)]="note.other"
+          />
+        </div>
+
+        <div class="mt-3 d-flex">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button
+            type="submit"
+            class="btn btn-danger ms-3"
+            (click)="onDelete()"
+          >
+            Delete
+          </button>
+          <button type="submit" class="btn btn-light" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+  <ng-template #notFound>
+    <div class="alert alert-warning" role="alert">A Note not found!</div>
+  </ng-template>
+</div>
