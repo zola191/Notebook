@@ -3348,11 +3348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Learn\\Notebook_try3\\API\\Notebook.Api\\Notebook.Api\\Notebook.Api.csproj",
+      "projectUniqueName": "E:\\zola191GitRepo\\notebook\\API\\Notebook.Api\\Notebook.Api\\Notebook.Api.csproj",
       "projectName": "Notebook.Api",
-      "projectPath": "E:\\Learn\\Notebook_try3\\API\\Notebook.Api\\Notebook.Api\\Notebook.Api.csproj",
+      "projectPath": "E:\\zola191GitRepo\\notebook\\API\\Notebook.Api\\Notebook.Api\\Notebook.Api.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "E:\\Learn\\Notebook_try3\\API\\Notebook.Api\\Notebook.Api\\obj\\",
+      "outputPath": "E:\\zola191GitRepo\\notebook\\API\\Notebook.Api\\Notebook.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zz2wPbvW9YLkhNPycLUS6VFSOrAGNRUM40LVy/qiQfq5/U9Y9l9sJ6JPEr53bYb7IpZBsF2HvDgprmF7iEA1FA==",
+  "dgSpecHash": "wGiTjBcx151yJ+DlPBTTxw5HehYrfkAWbz5OuB/mb6R9136k1D8k0GuZ0c8SrY3EdZ6lB+qmRQ2P/p2KTtzt7Q==",
   "success": true,
-  "projectFilePath": "E:\\Learn\\Notebook_try3\\API\\Notebook.Api\\Notebook.Api\\Notebook.Api.csproj",
+  "projectFilePath": "E:\\zola191GitRepo\\notebook\\API\\Notebook.Api\\Notebook.Api\\Notebook.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alex\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
