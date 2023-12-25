@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Notebook.Api.Data;
 using Notebook.Api.Domain;
 using Notebook.Api.DTO;
@@ -9,10 +10,11 @@ namespace Notebook.Api.Services
     public class NoteService:INoteService
     {
         private readonly ApplicationdbContext dbContext;
-
-        public NoteService(ApplicationdbContext dbContext)
+        private readonly IMapper _mapper;
+        public NoteService(ApplicationdbContext dbContext, IMapper mapper = null)
         {
             this.dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public async Task<NoteModel> CreateAsync(NoteDto request)
@@ -33,19 +35,7 @@ namespace Notebook.Api.Services
             await dbContext.Notes.AddAsync(note);
             await dbContext.SaveChangesAsync();
 
-            var response = new NoteModel
-            {
-                Id = note.Id,
-                FirstName = note.FirstName,
-                MiddleName = note.MiddleName,
-                LastName = note.LastName,
-                PhoneNumber = note.PhoneNumber,
-                Country = note.Country,
-                BirthDay = note.BirthDay,
-                Organization = note.Organization,
-                Position = note.Position,
-                Other = note.Other,
-            };
+            var response = _mapper.Map<NoteModel>(note);
 
             return response;
         }
@@ -103,19 +93,8 @@ namespace Notebook.Api.Services
             {
                 dbContext.Entry(existingNote).CurrentValues.SetValues(note);
                 await dbContext.SaveChangesAsync();
-                var response = new NoteDto
-                {
-                    Id = note.Id,
-                    FirstName = note.FirstName,
-                    MiddleName = note.MiddleName,
-                    LastName = note.LastName,
-                    BirthDay = note.BirthDay,
-                    Organization = note.Organization,
-                    Country = note.Country,
-                    Other = note.Other,
-                    PhoneNumber = note.PhoneNumber,
-                    Position = note.Position,
-                };
+                var response = _mapper.Map<NoteDto>(note);
+
                 return response;
             }
             return null;
@@ -130,19 +109,7 @@ namespace Notebook.Api.Services
             }
             dbContext.Notes.Remove(existingNote);
             await dbContext.SaveChangesAsync();
-            var response = new NoteDto
-            {
-                Id = existingNote.Id,
-                Country = existingNote.LastName,
-                FirstName = existingNote.FirstName,
-                LastName = existingNote.LastName,
-                BirthDay = existingNote.BirthDay,
-                MiddleName = existingNote.MiddleName,
-                Organization = existingNote.Organization,
-                Other = existingNote.Other,
-                PhoneNumber = existingNote.PhoneNumber,
-                Position = existingNote.Position,
-            };
+            var response = _mapper.Map<NoteDto>(existingNote);
 
             return response;
         }

@@ -151,3 +151,5 @@ E:\zola191GitRepo\notebook\API\Notebook.Api\Notebook.Api\obj\Debug\net7.0\refint
 E:\zola191GitRepo\notebook\API\Notebook.Api\Notebook.Api\obj\Debug\net7.0\Notebook.Api.pdb
 E:\zola191GitRepo\notebook\API\Notebook.Api\Notebook.Api\obj\Debug\net7.0\Notebook.Api.genruntimeconfig.cache
 E:\zola191GitRepo\notebook\API\Notebook.Api\Notebook.Api\obj\Debug\net7.0\ref\Notebook.Api.dll
+E:\zola191GitRepo\notebook\API\Notebook.Api\Notebook.Api\bin\Debug\net7.0\AutoMapper.dll
+E:\zola191GitRepo\notebook\API\Notebook.Api\Notebook.Api\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
