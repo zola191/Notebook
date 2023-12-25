@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Azure;
 using Microsoft.EntityFrameworkCore;
 using Notebook.Api.Data;
 using Notebook.Api.Domain;
@@ -8,11 +7,12 @@ using Notebook.Api.Services.IServices;
 
 namespace Notebook.Api.Services
 {
-    public class NoteService:INoteService
+    public class NoteService : INoteService
     {
         private readonly ApplicationdbContext dbContext;
         private readonly IMapper _mapper;
-        public NoteService(ApplicationdbContext dbContext, IMapper mapper = null)
+
+        public NoteService(ApplicationdbContext dbContext, IMapper mapper)
         {
             this.dbContext = dbContext;
             _mapper = mapper;
@@ -26,7 +26,6 @@ namespace Notebook.Api.Services
             await dbContext.SaveChangesAsync();
 
             var response = _mapper.Map<NoteModel>(note);
-
             return response;
         }
 
@@ -38,19 +37,7 @@ namespace Notebook.Api.Services
 
             foreach (var note in notes)
             {
-                response.Add(new Note
-                {
-                    Id = note.Id,
-                    BirthDay = note.BirthDay,
-                    Country = note.Country,
-                    FirstName = note.FirstName,
-                    LastName = note.LastName,
-                    MiddleName = note.MiddleName,
-                    Organization = note.Organization,
-                    Other = note.Other,
-                    PhoneNumber = note.PhoneNumber,
-                    Position = note.Position,
-                });
+                response.Add(_mapper.Map<Note>(note));
             }
 
             return notes;
@@ -65,7 +52,7 @@ namespace Notebook.Api.Services
         public async Task<NoteDto?> Update(int id, UpdateNoteRequestDto request)
         {
             var note = _mapper.Map<NoteDto>(request);
-
+            note.Id = id;
             var existingNote = await dbContext.Notes.FirstOrDefaultAsync(f => f.Id == note.Id);
             if (existingNote != null)
             {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Notebook.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55e8f71cd14f1f71b0d52af0647d347d34db227f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0649a220e05049d3f36f836021e0c6e47fff389")]
 [assembly: System.Reflection.AssemblyProductAttribute("Notebook.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Notebook.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
